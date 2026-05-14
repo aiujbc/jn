@@ -1,0 +1,103 @@
+
+<style>
+  @keyframes pulse-ring {
+    0% { transform: scale(0.8); opacity: 0.8; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @keyframes blink-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+  .pulse-ring {
+    animation: pulse-ring 2s ease-out infinite;
+  }
+  .float-icon {
+    animation: float 3s ease-in-out infinite;
+  }
+  .dot1 { animation: blink-dot 1.4s ease-in-out infinite; }
+  .dot2 { animation: blink-dot 1.4s ease-in-out 0.2s infinite; }
+  .dot3 { animation: blink-dot 1.4s ease-in-out 0.4s infinite; }
+</style>
+
+<div style="background: linear-gradient(135deg, #0a1628 0%, #0e2040 50%, #0a1628 100%); min-height: 520px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem 2rem; position: relative; overflow: hidden; border-radius: var(--border-radius-lg);">
+
+  <!-- Background grid lines -->
+  <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.06;" viewBox="0 0 680 520" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M40 0H0V40" fill="none" stroke="#4fc3f7" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid)"/>
+  </svg>
+
+  <!-- Pulse rings behind icon -->
+  <div style="position:relative; margin-bottom:1.5rem;">
+    <div class="pulse-ring" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90px;height:90px;border-radius:50%;border:2px solid #ef5350;pointer-events:none;"></div>
+    <div class="float-icon" style="width:72px;height:72px;background:#ef5350;border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;z-index:1;">
+      <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+        <line x1="12" y1="9" x2="12" y2="13"/>
+        <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Title -->
+  <p style="color:#ef9a9a;font-size:13px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;margin:0 0 0.5rem;">의정부시</p>
+  <h1 style="color:#fff;font-size:32px;font-weight:500;margin:0 0 0.3rem;text-align:center;line-height:1.2;">재난안전 포털</h1>
+  <p style="color:#90caf9;font-size:20px;font-weight:400;margin:0 0 2rem;letter-spacing:0.05em;">Coming Soon
+    <span class="dot1" style="display:inline-block;width:5px;height:5px;background:#90caf9;border-radius:50%;margin-left:4px;vertical-align:middle;"></span>
+    <span class="dot2" style="display:inline-block;width:5px;height:5px;background:#90caf9;border-radius:50%;margin-left:3px;vertical-align:middle;"></span>
+    <span class="dot3" style="display:inline-block;width:5px;height:5px;background:#90caf9;border-radius:50%;margin-left:3px;vertical-align:middle;"></span>
+  </p>
+
+  <!-- Countdown -->
+  <div style="display:flex;gap:16px;margin-bottom:2.5rem;" id="countdown-wrap">
+    <div style="text-align:center;">
+      <div id="cd-days" style="background:rgba(255,255,255,0.07);border:0.5px solid rgba(255,255,255,0.15);border-radius:10px;padding:14px 18px;font-size:30px;font-weight:500;color:#fff;min-width:64px;">--</div>
+      <p style="color:#90caf9;font-size:11px;margin:6px 0 0;letter-spacing:0.08em;">일</p>
+    </div>
+    <div style="text-align:center;">
+      <div id="cd-hours" style="background:rgba(255,255,255,0.07);border:0.5px solid rgba(255,255,255,0.15);border-radius:10px;padding:14px 18px;font-size:30px;font-weight:500;color:#fff;min-width:64px;">--</div>
+      <p style="color:#90caf9;font-size:11px;margin:6px 0 0;letter-spacing:0.08em;">시간</p>
+    </div>
+    <div style="text-align:center;">
+      <div id="cd-mins" style="background:rgba(255,255,255,0.07);border:0.5px solid rgba(255,255,255,0.15);border-radius:10px;padding:14px 18px;font-size:30px;font-weight:500;color:#fff;min-width:64px;">--</div>
+      <p style="color:#90caf9;font-size:11px;margin:6px 0 0;letter-spacing:0.08em;">분</p>
+    </div>
+    <div style="text-align:center;">
+      <div id="cd-secs" style="background:rgba(239,83,80,0.18);border:0.5px solid rgba(239,83,80,0.4);border-radius:10px;padding:14px 18px;font-size:30px;font-weight:500;color:#ef9a9a;min-width:64px;">--</div>
+      <p style="color:#90caf9;font-size:11px;margin:6px 0 0;letter-spacing:0.08em;">초</p>
+    </div>
+  </div>
+
+  <!-- Description -->
+  <p style="color:#b0bec5;font-size:14px;text-align:center;max-width:380px;line-height:1.8;margin:0 0 2rem;">시민의 안전을 위한 스마트 재난안전 서비스를<br>준비하고 있습니다. 곧 만나보세요.</p>
+
+  <!-- Feature pills -->
+</div>
+
+<script>
+  const target = new Date();
+  target.setDate(target.getDate() + 30);
+
+  function update() {
+    const now = new Date();
+    const diff = Math.max(0, target - now);
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
+    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+  }
+  update();
+  setInterval(update, 1000);
+</script>

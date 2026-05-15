@@ -1,1 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>의정부시 AI 재난 안전상황실</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: #d8c7b7;
+      font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+    }
+
+    .main-page {
+      position: relative;
+      width: min(1536px, 100%);
+      line-height: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
+      background: #d8c7b7;
+    }
+
+    .main-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .link-area {
+      position: absolute;
+      display: block;
+      border-radius: 14px;
+      text-decoration: none;
+      outline: none;
+      line-height: normal;
+      background: transparent;
+      box-shadow: none;
+      transition: none;
+    }
+
+    .link-area:hover,
+    .link-area:focus-visible {
+      background: transparent;
+      box-shadow: none;
+      transform: none;
+    }
+
+    .link-area span {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /*
+      위치 확인용 임시 표시
+      현재 링크 영역을 전체적으로 위로 크게 조정했습니다. 상단 6개 메뉴 중 1열은 유지, 2열부터 6열까지는 열이 뒤로 갈수록 더 크게 우측 이동했으며, ChatGPT·Gemini 행은 추가로 우측으로 크게 이동했습니다.
+      링크 위치를 조정할 때만 아래 주석을 해제하세요.
+      조정 완료 후 다시 주석 처리하면 기본 마우스 오버 효과만 표시됩니다.
+
+      .link-area {
+        background: rgba(255, 0, 0, 0.18);
+        border: 2px solid red;
+      }
+    */
+
+    /* 상단 6개 메뉴 클릭 영역 */
+    .menu-report {
+      left: 17.55%;
+      top: 35.20%;
+      width: 9.05%;
+      height: 20.20%;
+    }
+
+    .menu-meeting {
+      left: 28.75%;
+      top: 35.20%;
+      width: 9.05%;
+      height: 20.20%;
+    }
+
+    .menu-festival {
+      left: 39.70%;
+      top: 35.20%;
+      width: 9.10%;
+      height: 20.20%;
+    }
+
+    .menu-duty {
+      left: 50.70%;
+      top: 35.20%;
+      width: 9.05%;
+      height: 20.20%;
+    }
+
+    .menu-smartcity {
+      left: 61.75%;
+      top: 35.20%;
+      width: 9.05%;
+      height: 20.20%;
+    }
+
+    .menu-library {
+      left: 72.95%;
+      top: 35.20%;
+      width: 9.05%;
+      height: 20.20%;
+    }
+
+    /* 하단 ChatGPT, Gemini 바로가기 */
+    .quick-chatgpt {
+      left: 42.25%;
+      top: 61.80%;
+      width: 6.00%;
+      height: 16.00%;
+    }
+
+    .quick-gemini {
+      left: 53.90%;
+      top: 61.80%;
+      width: 6.00%;
+      height: 16.00%;
+    }
+
+    .notice {
+      max-width: min(1536px, 100%);
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(70, 45, 30, 0.68);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      color: rgba(255, 255, 255, 0.95);
+      font-size: 14px;
+      line-height: 1.45;
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 10px;
+        justify-content: flex-start;
+      }
+
+      .main-page {
+        margin-top: 14px;
+        border-radius: 10px;
+      }
+
+      .notice {
+        border-radius: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="main-page" aria-label="의정부시 AI 재난 안전상황실 메인페이지">
+    <!--
+      적용 폴더명 예시
+      AI재난안전상황실_메인페이지_02
+
+      폴더 구조
+      AI재난안전상황실_메인페이지_02/
+      ├─ index.html
+      └─ mainpage_02.png
+
+      적용 방법
+      1. 현재 업로드한 이미지를 mainpage_02.png 파일명으로 저장합니다.
+      2. 이 HTML 파일을 index.html로 저장합니다.
+      3. index.html과 mainpage_02.png를 같은 폴더에 둡니다.
+      4. 아래 href 주소를 실제 연결할 사이트 주소로 교체합니다.
+      5. index.html을 더블클릭하거나 웹서버에 업로드하면 바로 사용 가능합니다.
+    -->
+
+    <img src="mainpage_02.png" alt="의정부시 AI 재난 안전상황실 메인페이지" class="main-image" />
+
+    <a class="link-area menu-report" href="https://chatgpt.com/g/g-69df0e00b4ac8191b477b8320da1ce4a-jaenansanghwangbogoseo-coanjagseong" target="_blank" rel="noopener noreferrer">
+      <span>재난상황보고서 초안작성</span>
+    </a>
+
+    <a class="link-area menu-meeting" href="https://chatgpt.com/g/g-6a02ce50f19c81919b2c1f7341273177-sanghwangpandanhoeyi-jaryo-jagseong" target="_blank" rel="noopener noreferrer">
+      <span>상황판단회의 자료 작성</span>
+    </a>
+
+    <a class="link-area menu-festival" href="https://chatgpt.com/g/g-6a02e258490081919721360bb66fce63-jiyeogcugje-anjeongwanrigyehoegseo-pyojunan-mic-cekeuriseuteu-jagseong" target="_blank" rel="noopener noreferrer">
+      <span>지역축제 안전관리계획서 표준안 및 체크리스트</span>
+    </a>
+
+    <a class="link-area menu-duty" href="https://chatgpt.com/g/g-6a058d2dfba08191bbeef868d162bf80-dangjigminweon-annae-jagseong" target="_blank" rel="noopener noreferrer">
+      <span>당직민원 답변 작성</span>
+    </a>
+
+    <a class="link-area menu-smartcity" href="http://105.3.10.111:29000/auth/login" target="_blank" rel="noopener noreferrer">
+      <span>스마트시티 서비스 통합플랫폼</span>
+    </a>
+
+    <a class="link-area menu-library" href="https://www.onnara.go.kr/community/200016073/사회재난조치매뉴얼" target="_blank" rel="noopener noreferrer">
+      <span>자료실</span>
+    </a>
+
+
+    <a class="link-area quick-chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">
+      <span>ChatGPT 바로가기</span>
+    </a>
+
+    <a class="link-area quick-gemini" href="https://gemini.google.com/" target="_blank" rel="noopener noreferrer">
+      <span>Gemini 바로가기</span>
+    </a>
+  </main>
+
+  <div class="notice">
+    각 메뉴 영역을 클릭하면 지정한 사이트로 이동합니다.
+  </div>
+</body>
+</html>
 
